@@ -1,0 +1,682 @@
+{
+	"info": {
+		"_postman_id": "0541fd88-4a5d-4c8e-a8db-3463841d7534",
+		"name": "pokedex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3108306"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "POST - Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"User\",\n  \"lastname\": \"Admin\",\n  \"username\": \"uadmin@yopmail.com\",\n  \"password\": \"password\",\n  \"userRole\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"uadmin@yopmail.com\",\n  \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "GET - Find Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Find User By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user/:userId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"Erwin\",\n  \"lastname\": \"Admin\",\n  \"username\": \"eadmin@yopmail.com\",\n  \"password\": \"password\",\n  \"userRole\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/:userId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL - Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/:userId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "monster",
+			"item": [
+				{
+					"name": "GET - Find Monsters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/monster",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"monster"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Find Monster By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/monster/:monsterId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"monster",
+								":monsterId"
+							],
+							"variable": [
+								{
+									"key": "monsterId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Create Monster",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"name\": \"Chikorita\",\n      \"type1\": \"GRASS\",\n      \"type2\": \"\",\n      \"description\": \"chikoritatata\",\n      \"height\": 25,\n      \"weight\": 50,\n      \"stats\": {\n        \"hp\": 65,\n        \"attack\": 70,\n        \"def\": 50,\n        \"speed\": 80\n      },\n      \"category\": \"leaf monster\",\n      \"image\": \"http://url-image\"\n    }"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/monster",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"monster"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Update Monster",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"name\": \"Chikorita\",\n      \"type1\": \"GRASS\",\n      \"type2\": \"\",\n      \"description\": \"chikoritatata\",\n      \"height\": 25,\n      \"weight\": 50,\n      \"stats\": {\n        \"hp\": 65,\n        \"attack\": 70,\n        \"def\": 50,\n        \"speed\": 80\n      },\n      \"category\": \"leaf monster\",\n      \"image\": \"http://url-image\"\n    }"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/monster/:monsterId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"monster",
+								":monsterId"
+							],
+							"variable": [
+								{
+									"key": "monsterId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL - Delete Monster",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/monster/:monsterId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"monster",
+								":monsterId"
+							],
+							"variable": [
+								{
+									"key": "monsterId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-monster",
+			"item": [
+				{
+					"name": "POST - Catch Monster By User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"monsterId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user-monster",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-monster"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-role",
+			"item": [
+				{
+					"name": "GET - Find User Roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user-role",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Find User Role By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user-role/:userRoleId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-role",
+								":userRoleId"
+							],
+							"variable": [
+								{
+									"key": "userRoleId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Create User Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user-role",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Update User Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user-role/:userRoleId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-role",
+								":userRoleId"
+							],
+							"variable": [
+								{
+									"key": "userRoleId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL - Delete User Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODczNWJiNjc1ZWJkODZlYTA2ZmUyZCIsImlhdCI6MTY2OTg0NTYyNiwiZXhwIjoxNjY5ODQ5MjI2fQ.-rn7cOjpiTzXOqu1wMMgbjNUadZtBDH-26Eoi30KYoQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user-role/:userRoleId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user-role",
+								":userRoleId"
+							],
+							"variable": [
+								{
+									"key": "userRoleId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

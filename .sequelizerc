@@ -1,0 +1,18 @@
+// import * as path from 'path'
+
+// // const sequelize = {
+// //   "config": path.resolve( "./src/config", "database.config.js" ),
+// //   "models-path": path.resolve( "./src/api/models" ),
+// //   "seeders-path": path.resolve( "./src/seeders" ),
+// //   "migrations-path": path.resolve( "./src/migrations" )
+// }
+// export default sequelize
+
+const path = require('path')
+
+module.exports = {
+   "config": path.resolve( "./src/config", "database.config.js" ),
+   "models-path": path.resolve( "./src/api/models" ),
+   "seeders-path": path.resolve( "./src/seeders" ),
+   "migrations-path": path.resolve( "./src/migrations" )
+};
